@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	 setlocale(LC_ALL,"Turkish");
+	 int sayi1,sayi2,bolen,kucuksayi=0;
+	 cout<<"BU PROGRAM İKİ SAYININ ORTAK BÖLENİNİ BULUR\n";
+	label:
+	 cout<<endl<<"iki sayi giriniz:";
+	 cin>>sayi1>>sayi2;
+	 (sayi1<sayi2) ? kucuksayi=sayi1 : kucuksayi=sayi2;
+	 
+	 for(int i=2;i<=kucuksayi;i++)
+	 {
+	 	if(sayi1%i==0 && sayi2%i==0)
+	 	{	
+	 	 bolen=i;
+	 	cout<<"Ortak bölen:"<<i<<endl;
+		 }
+		
+	 }
+	goto label;
+	 system("pause");
+	 
+}
