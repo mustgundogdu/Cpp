@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+	setlocale(LC_ALL,"Turkish");
+	float galon,mkup;
+	
+
+	cout<<"Galon giriniz:"<<endl;
+	cin>>galon;
+	mkup=galon/7.481;
+	
+	cout<<"bir galon metreküp cinsinden:"<<mkup<<endl;
+	
+	
+}
