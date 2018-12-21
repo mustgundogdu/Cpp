@@ -1,0 +1,20 @@
+#include "iostream"
+using namespace std;
+void repchar(char ch,int n )
+{
+	for(int j=0;j<n;j++)
+	cout<<ch;
+	cout<<endl;
+}
+int main()
+{
+	setlocale(LC_ALL,"Turkish");
+	char chn;
+	int num;
+	cout<<"karakter girin:";
+	cin>>chn;
+	cout<<"kaç kez tekrarlansın :";
+	cin>>num;
+	repchar(chn,num);
+	return 0;
+}
