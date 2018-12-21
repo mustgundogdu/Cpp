@@ -1,0 +1,17 @@
+#include "iostream"
+using namespace std;
+int kareal(int x)
+{
+	int kare=x*x;
+	return kare;
+	
+}
+int main()
+{
+	setlocale(LC_ALL,"Turkish");
+	int sayi;
+	cout<<"karesi alınacak sayıyı girin:"<<endl;
+	cin>>sayi;
+	cout<<"sayınızın karesi:"<<kareal(sayi);
+	return 0;
+}
