@@ -1,0 +1,25 @@
+//permütasyon formülü=n!/n-r!
+#include "iostream"
+using namespace std;
+void permut()
+{
+	setlocale(LC_ALL,"Turkish");
+	int n,r,permutasyon;
+	cout<<"permütasyon sayılarını girin:"<<endl;
+	cin>>n>>r;
+	int fakt=1;
+	int fakt2=1;
+	for(int i=1;i<=n;i++)
+	fakt=fakt*i;
+	for(int y=1;y<=n-r;y++)
+	fakt2=fakt2*y;
+	
+	permutasyon=fakt/fakt2;
+	
+	cout<<"permütasyon :"<<permutasyon;
+}
+int main()
+{
+	permut();
+	return 0;
+}
