@@ -1,0 +1,34 @@
+#include "iostream"
+using namespace std;
+
+struct kordinat{       //kordinat isminde bir yapı tanımladık ve bu yapıda x ve y eksen tiplerini tanımladık. 
+	int xeksen;
+	int  yeksen;
+	
+};
+
+void eksen(kordinat);   //eksen adında bir fonksiyon deklare ettik.
+int main()
+{
+	setlocale(LC_ALL,"Turkish");   //türkçe karakterler için.
+	kordinat p1,p2;   //kordinat yapısında iki ayrı nokta türettik.
+	cout<<"p1'nin x noktasını giriniz:"<<endl; cin>>p1.xeksen;   //p1 noktası için kordinatları aldık.
+	cout<<"p1'nin y noktasını giriniz:"<<endl; cin>>p1.yeksen;
+	
+	cout<<"p2'nin x noktasını giriniz:"<<endl; cin>>p2.xeksen;    //p2 noktası için kordinatları aldık.
+	cout<<"p2'nin y noktasını giriniz:"<<endl; cin>>p2.yeksen;
+	
+	cout<<"\np1=";     //p1 noktasının kordinatlarını ekrana yazdırmak için fonksiyonumuzdan yardım aldık.    
+	eksen(p1);        //bunu da kordinat yapımızı eksen fonksiyonunda tanımlayarak yaptık.
+	cout<<"\np2=";     //eksen(p1) ve eksen(p2) burada uu.xeksen ve uu.yeksen tanımlamasını kullanarak kordinatları ekrana bastı.
+	eksen(p2);         // yani p1 ve p2 noktalarının x ve ye değerlerini yazdırması için uu.xeksen(tüm x değerleri) uu.yeksen(tüm y değerleri) kullandık.
+	cout<<endl;   
+	
+	
+	return 0;
+}
+
+void eksen(kordinat uu)    
+{
+	cout<<uu.xeksen<<"/"<<uu.yeksen<<endl;
+}
