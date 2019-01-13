@@ -1,0 +1,21 @@
+#include "iostream"
+#include"cstring"         //dizi işleme fonksiyonlarımmız için cstring kütüphanesini açtık.
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL,"Turkish");          //türkçe karakterler için.
+	char string1[ ]="MUSTAFA";             //string biçiminde dizilerimizi tanımladık.
+	char string2[ ]="MUSTAFA GÜNDOĞDU";
+	char string3[28];
+	
+	strncat(string1,string2,7);            //strncat fonksiyonumuz sayesinde strin2 deki 7 karakteri string1 'e ekledik.
+	string1[14]='\0';                      //string1 deki karakterleri 14 karaktere kadar al. 
+	puts(string1);                          //puts() fonksiyonu sayesinde string1 dizisini ekrana bastırdık.
+	
+	strncpy(string3,string2,11);                 //strncpy fonksiyonu sayesinde string2 deki 11 karakteri boş olan ve max 28 karakter içerebilen string3 dizisine kopyaladık.
+	string3[12]='\0';                        //string3 deki karakterleri 12 karaktere kadar al.
+	puts(string3);                        //string3 son değişikliklerden sonra ekrana bas.
+
+return 0;
+}
