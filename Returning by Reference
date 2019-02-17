@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int sayi=100;
+
+int& rakam();
+
+int main()
+{
+	
+	cout<<"sayi="<<rakam()<<endl;
+	return 0;
+}
+int& rakam()
+{
+	return sayi;
+}
