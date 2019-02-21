@@ -29,7 +29,7 @@ class sayi{                    //sayi isminde bir class oluşturduk.
 };
 int main()
 {
-	sayi s1;              //sayi class 'ını çağırabilmemiz için s1 adında bir isim tanımladık.
+	sayi s1;              //sayi class 'ını çağırabilmemiz için s1 adında bir nesne tanımladık.
 	s1.hesap();          //hesap fonksiyonumuzu sayi class'ımızdan çağırdık ve işlemlerimiz programda gösterildi. 
 	
 	return 0;
