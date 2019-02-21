@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+class sayi{                    //sayi isminde bir class oluşturduk.
+	
+	private:                  //private kelimesi sadece class içinde fonksiyona erişim verir.
+		int num;                      
+		public:              //public kelimesi ise class dışında ve class içinde fonksiyona erişim verir.
+			          
+			void hesap()             //hesap adında değer döndürmeyecek bir fonksiyon açtık.
+			{
+				setlocale(LC_ALL,"Turkish");     //türkçe karakterler için setlocale(LC_ALL,"Turkish") komutunu kullandık.
+				int rakam[4];         //rakam isminde bir tek boyutlu dizi tanımladık.
+			
+			
+				for(int i=0;i<4;i++)                   
+				{
+					cout<<"sayi girin:"<<endl;                   //kullanıcıdan 4 defa sayı girmesi için for döngüsünde dizi ile giriş aldık.
+					cin>>rakam[i];
+				
+				}
+			int sonuc;                                                
+				sonuc=rakam[0]+rakam[1]+rakam[2]+rakam[3];                    //4 sayının toplamı için girilen sayıları topladık.
+				cout<<"sonuç:"<<sonuc<<endl;                                              //ve ekrana basdık.
+				
+			
+			}
+			
+					
+};
+int main()
+{
+	sayi s1;              //sayi class 'ını çağırabilmemiz için s1 adında bir isim tanımladık.
+	s1.hesap();          //hesap fonksiyonumuzu sayi class'ımızdan çağırdık ve işlemlerimiz programda gösterildi. 
+	
+	return 0;
+}
