@@ -1,0 +1,38 @@
+#include<iostream>
+#include<cstring>                            //string ifadesini kullanmak için.
+using namespace std;
+class ort{                         
+	public:
+		int sayi[3][2];                         //sayi adında 3 satır ve 2 sütundan oluşan bir çift boyutlu dizi tanımladık.
+		void sno(){
+			setlocale(LC_ALL,"Turkish");    //sno fonksiyonu içinde türkçe karakterler için setlocale(LC_ALL,"Turkish") komutunu kullandık.
+		
+		for(int i=0;i<3;i++)                                         //üç öğrencinin vize ve final notunu öğrenmek için üç 'e kadar tekrar eden bir for döngüsü açtık.
+			{	cout<<"Öğrencinin vize ve final notunu girin:";  
+			    cin>>sayi[i][0]>>sayi[i][1];                      //çift boyutlu dizi mantığı ile vize ve final notu için sütünları ve satırları toplamda 6 defa sayı alması için kullandık.
+			 
+			}
+	}
+		int hesap(int i)                               //tamsayı türünde değer döndürmesi için hesap adında bir fonksiyon açtık.
+		{                                              
+				int sonuc;                             
+			sonuc=sayi[i][0]*0.4+sayi[i][1]*0.6;              //toplamda 6 defa girilen (3 vize 3 final) vize ve final notlarını vize notunu %40 'ı final notunun %60 'ı olacak şekilde 
+			return sonuc;                                     //hesaplaması ve bunları topladıktan sonra sonuc değişkenine atadık.(böylelikle ortalamamızı bulduk.)
+		}                                                     //Bunu üç defa döndürmesi için return sonuc; ifadesini kullandık.(üç defa döndürmesi için int i parametresini int main 'in 
+				                                              //altında bulunan for döngüsündeki int i değişkenine atadık.)
+};
+int main()
+{
+	string ogr[3]={"1.","2.","3."};    //öğrencilerin sırasını 1.,2.,3., gibi ekranda göstermesi için string olarak bir tek boyutlu dizi tanımladık.
+	setlocale(LC_ALL,"Turkish"); 
+	ort s1;                                  //s1 adında ort class 'ına bağlı bir nesne tanımladık.
+	s1.sno();                               //sno fonksiyonumuzu çağırdık. 
+for(int i=0;i<3;i++)                                                    
+{ 
+ 	cout<<ogr[i]<<"Öğrencinin vize ve final ortalaması:"<<s1.hesap(i)<<endl;                  //s1 nesnesiyle hesap fonksiyonumuzun hesapladığı öğrenci ortalamalarını ekrana basdık.
+}
+
+
+return 0;
+
+}
