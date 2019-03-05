@@ -1,0 +1,36 @@
+#include<iostream>
+using namespace std;
+
+class counter{                     //counter adında bir class açtık.
+	private : 
+		unsigned int count;                    //unsigned veri tipini kullanarak pozitif tamsayı bir değişken tanımladık.
+		public :
+			counter():count(0)                          //kurucu fonksiyonumuzu tanımladık.
+			{ }                 //Kurucu fonksiyonlar üyesi oldukları sınıfların ismi ile kendi isimleri aynı olmalıdır.
+			                     //Kurucu fonksiyonlar verilere başlangıç değerleri atamak için kullanılırlar.
+			                    //Ayrıca kurucu fonksiyonlar için herhangi bir dönüş değeri atanmasına gerek yoktur.(derleyici bu şekilde bir kurucu fonksiyon olduğunu anlar.)
+			void a_count()                     
+			{                     //count değişkenimizi bir arttırması için a_count adında bir üye fonksiyon tanımladık.
+			count++;
+			}
+			int b_count()   //int veri türünde b_count adında yeni bir üye fonksiyon açarak count değerini döndürdük.  
+			{return count;
+			}
+		
+};
+                          int main()
+                          {
+                          	counter c1,c2;              //counter classımız ile işlemlerimizi yapmak için iki tane nesne tanımladık bunlar c1 ve c2.
+                          	cout<<"\nc1="<<c1.b_count(); //c1 ve c2 'nin başlangıç değerini ekrana basması için c1 ve c2 nesneleri ile b_count fonksiyonunu çağırdık. 
+                          	cout<<"\nc2="<<c2.b_count();   
+                          	
+                          	c1.a_count();       //burada ise c1 ve c2 'nin başlangıç değerlerini bir arttırması için c1 ,c2 nesnelerimiz ile a_count fonksiyonumuzu çağırdık. 
+                          	c2.a_count();
+                          	
+                          		cout<<"\nc1="<<c1.b_count();   //daha sonra başlangıç değerleri bir arttırılmış olan c1 ve c2 'nin son değerlerini ekrana basmak için 
+                          	cout<<"\nc2="<<c2.b_count();        //tanımlamış olduğumuz c1 ve c2 nesnelerini b_count fonksiyonu ile ekrana yansıttık.
+                          
+                             
+                          	cout<<endl;
+                          	return 0;
+						  }
