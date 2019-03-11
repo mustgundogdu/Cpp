@@ -1,0 +1,68 @@
+#include"iostream" 
+#include<iomanip>  //setw() fonksiyonu için.
+
+using namespace std;                      
+
+class enigma{           //enigma adında bir class açtık.
+	
+	private :
+		int key,x,i;       //seçim yapmak için ve for döngüleri için x ile y global değişkenlerimizi tanımladık.
+		
+		char str[100];   //100 karakter girmek için str adında tek boyutlu bir dizi tanımladık.
+		public :
+		void bilgi()        //bilgi adında bir değer döndürmeyecek üye fonksiyon açtık.
+		{
+			setlocale(LC_ALL,"Turkish");    //türkçe karakterler için.
+			cout<<"KELİME ŞİFRELEME PROGRAMINA HOŞGELDİNİZ"<<endl       //cout fonksiyonumuzu bu şekilde de kullanabiliriz.
+			    <<"Şifrelemek istediğininz kelimenizi giriniz..."<<endl;
+			    
+			    cin>>str;   //str dizisine max 100 karakterlik bir giriş için cin fonksiyonu ile giriş aldık ve girilen kelimeyi diziye atadık.
+				
+			    cout<<"Yapmak istediğiniz işlemi seçin"<<endl
+			        <<"(1)Şifre yap"<<endl
+			        <<"(2)Şifre çöz"<<endl;
+			        
+			        cin>>x; //işlem seçimi için.
+			        
+		}
+		
+		void secim()   //seçim için secim adında bir değer döndürmeyecek fonksiyon tanımladık.
+		
+		{
+			setlocale(LC_ALL,"Turkish");
+			if (x==1)                                 //eğer seçim 1 ise;
+			{
+				cout<<"Şifreleme yapmak için bir anahtar ... "<<endl;
+				cin>>key;                                    //ascii de kaydırma yapmak için bir sayısal değer girilmesini istedik.
+			for(i = 0; (i <= 100 && str[i] != '\0'); i++)   //  (i <= 100 && str[i] != '\0') bunun anlamı :   girilen  karakter sayısını birer birer kullan diyebiliriz.
+            str[i] = str[i] + key;                   //mesela mustafa 7 karakterli bir kelime o zaman program bunun 7 karakterinide şifrelemesi için 7 karakteri de str[i] (i bu örnekte 7 olur) dizisine ataması lazım.
+                                                    //yani 7 karakteri birer birer şifrelemsi ya da şifresini çözmesi lazım.
+         cout << "\nşifreniz :" <<setw(3)<<str<<endl;    //daha sonrada  str[i] = str[i] + key; bu ifade ile girilen key kadar eklenen kelimeyi tekrar str[i] dizisine atayarak ekrana bastırdık.
+				                                       
+			}
+			else if(x==2)
+			{                        //eğer seçimimiz 2 ise kelimemizdeki karakterlerden ascii'deki sırasına göre girilen rakam(key) kadar geri giecektir. Bunu da sadece girilen keyi çıkartarak yaptık.
+				cout<<"Şifrelemeyi çözmek için bir anahtar girin..."<<endl;     
+				cin>>key;
+				
+				for(i =0; (i <= 100 && str[i] != '\0'); i++)             
+            str[i] = str[i] - key;                                       
+                                                                         
+         cout << "\nÇözülen Parolanız : "  <<setw(3)<< str << endl;  //setw(3) fonksiyonumuz ekrana basılan ifadeden önce 3 karakter kadar boşluk bırak anlamında.
+			}
+			
+			else{
+				cout<<"HATALI GİRİŞ!!\a"<<endl;  //eğer farklı bir secim olursa hatalı giriş olarak ekrana bas.
+			}
+		}
+		
+};
+int main()
+{
+	enigma e1;
+	
+	e1.bilgi();  //e1 nesnesi ile bilgi() üye fonksiyonumuzu çağır.
+	e1.secim();  //e1 nesnesi ile secim() üye fonksiyonumuzu çağır.
+	
+	return 0;
+}
