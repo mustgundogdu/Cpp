@@ -6,7 +6,7 @@ using namespace std;
 class enigma{           //enigma adında bir class açtık.
 	
 	private :
-		int key,x,i;       //seçim yapmak için ve for döngüleri için x ile y global değişkenlerimizi tanımladık.
+		int key,x,i;       //seçim yapmak için ve for döngüleri için x ile y adındaki değişkenlerimizi tanımladık.
 		
 		char str[100];   //100 karakter girmek için str adında tek boyutlu bir dizi tanımladık.
 		public :
