@@ -1,0 +1,58 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+	setlocale(LC_ALL,"turkish");
+	
+	string kullaniciSifresi="", kullaniciadi="";
+	int sayac=0;
+	char kontrol[]={'+','&','-','!'}, cevap;
+	
+		cout<<"Sisteme kayıt ekranına hoşgeldiniz. Lütfen bilgilerinizi giriniz: "<<endl;
+		cout<<"Kullanıcı Adınızı Giriniz: "; cin>>kullaniciadi; cout<<endl<<"Giriş yapılacak kullanıcı: "<<kullaniciadi<<endl<<endl;
+		cout<<"Şifrenizi Giriniz: "; cin>>kullaniciSifresi;
+		if(kullaniciSifresi.length()>=8 && kullaniciSifresi.length()<=16)
+		{
+			for(int i=0; i<=kullaniciSifresi.length(); i++)
+			{
+				for(int y=0; y<=3; y++)
+				{
+					if(kullaniciSifresi[i]==kontrol[y])	
+					{
+						break;
+					}	
+				}	
+			}
+		}
+		else
+		{
+			cout<<"Hatalı şifre türü. "<<endl;
+		}
+		string Giriskullaniciadi, Girissifre; 
+			cout<<"Kayıt başarılı..."<<endl<<endl;
+			cout<<"Giriş yapmak istiyor musunuz? (E/H)"; cin>>cevap;
+			if(cevap=='E' || cevap=='e') tekrar:
+			{
+				cout<<endl<<"Kullanıcı Adı: "; cin>>Giriskullaniciadi;
+				cout<<"Parolanız: "; cin>>Girissifre;
+				if(Giriskullaniciadi==kullaniciadi && Girissifre==kullaniciSifresi)
+				{
+					cout<<endl<<endl<<"Giriş yapıldı. İyi forumlar.."<<endl;
+					goto son;
+				}
+				else
+				{
+					sayac++;
+					cout<<"Kullanıcı adınız veya parolanız hatalı"<<endl<<endl;;
+					if (sayac>=3) 
+					{
+						cout<<"3 kez yanlış girdiğiniz için 5 dakika sonra tekrar deneyin."<<endl;
+						goto son;		
+					}
+					goto tekrar;
+									
+				}
+	}
+	son:
+		system("pause");
+}
