@@ -1,0 +1,53 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+class okul{
+	private :
+		
+	string a1[100][2];
+
+		public :
+			int n;
+			void isim()
+			{
+				cout<<"Kac kisinin ismi ve soyismi"<<endl;
+				cin>>n;
+				int sayi[n];
+				
+				
+				for(int i=0;i<n;i++)
+				{
+					cout<<"isim ve soy isim girin:"<<endl;
+					cin>>a1[i][0]>>a1[i][1];
+				
+				}
+				
+			}
+			void get_isim()
+			{
+				for(int i=0;i<n;i++)
+				{
+					cout<<sayi[i];
+					cout<<a1[i][0]<<" "<<a1[i][1]<<endl;
+				}
+			}
+};
+
+class ogrenci: public  okul{
+	public :	
+	void oisim()
+	{
+		isim();
+		get_isim();
+	}
+	
+};
+
+int main()
+{
+	ogrenci o1;
+	o1.oisim();
+	
+	return 0;
+}
