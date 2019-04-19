@@ -1,0 +1,85 @@
+#include "iostream"
+#include"cmath"
+#include"process.h"
+#include "iomanip"
+using namespace std;
+int main()
+{
+	setlocale(LC_ALL,"Turkish");
+	
+	long a;
+	double f;
+	int year;
+	int month;
+	int day;
+	char secim;
+	int time;
+	float quotient;
+	cout<<"FAİZ HESAPLAMA PROGRAMINA HOŞGELDİNİZ\n";
+	label:
+	cout<<"Ana paranızı giriniz: ";
+	cin>>a;
+	cout<<"işlem yapılıyor...\n";
+	cout<<"Faiz oranını giriniz:\n";
+	cin>>f;
+	
+	cout<<"Faiz Zaman birimini seçiniz:\n";
+	cout<<"'1'Yıllık\n";
+	cout<<"'2'Aylık\n";
+	cout<<"'3'Günlük\n";
+	cin>>time;
+	
+	switch(time)
+	{
+		case 1:
+			
+			cout<<"Kaç yıl olduğunu giriniz:\n";
+			cin>>year;
+			cout<<"Yıllık faiz uygulanıyor...\n";
+			quotient=a*f/100*year*10;
+			cout<<"Yıllık Faiz Geliri="<<quotient<<endl;
+			cout<<"Devam etmek istiyormusunuz?(y/n)";
+			cin>>secim;
+			if(secim=='y'){
+				goto label;
+			}
+			if(secim=='n'){
+				exit(0);
+			}
+			
+		case 2:
+		cout<<setw(10)<<"Kaç ay olduğunu giriniz:\n";
+		cin>>month;
+		cout<<"Aylık faiz uygulanıyor...\n";
+		quotient=a*f/100*month/12;	
+	cout<<"Aylık Faiz Geliri="<<quotient<<endl;
+	cout<<setw(10)<<"Devam etmek istiyormusunuz?(y/n)";
+			cin>>secim;
+	if(secim=='y'){
+				goto label;
+			}
+			if(secim=='n'){
+				exit(0);
+			}
+	case 3:
+		cout<<setw(10)<<"Kaç gün olduğunu giriniz:\n";
+		cin>>day;
+		cout<<"Günlük Faiz uygulanıyor...\n";
+		quotient=a*f*day/360;
+		cout<<"Günlük Faiz Geliri="<<quotient<<endl;
+		cout<<setw(10)<<"Devam etmek istiyormusunuz?(y/n)";
+			cin>>secim;
+			if(secim=='y'){
+				goto label;
+			}
+			if(secim=='n'){
+				exit(0);
+			}
+		default:
+			cout<<setw(10)<<"!!HATALI GİRİŞ!!\a"<<endl;
+	}
+	return 0;
+	system("pause");
+ 
+	
+}
