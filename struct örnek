@@ -1,0 +1,41 @@
+#include"iostream"
+using namespace std;
+
+struct uzunluk{
+	float metre;
+	double cmetre;
+};
+int main()
+{
+	uzunluk u1,u2;
+	setlocale(LC_ALL,"Turkish");
+	int secim;
+	float cmetre;
+	float metre;
+while(1){
+		cout<<"uzunluk dnüştürücüyü seçin:"<<endl  
+	    <<"metre den cmetre ye..(1)"<<endl
+	    <<"cmetreden metreye..(2)"<<endl;
+	    cin>>secim;
+	    if(secim!=1||2)
+	    {exit(0);
+		}
+	cout<<"hatalı secim";
+	    if(secim!=1)
+	   { cout<<"cmetre giriniz:"<<endl;
+	    cin>>cmetre;
+	    u1.cmetre=cmetre/100;
+		u2.metre=u1.cmetre;
+		cout<<"metre değeri="<<endl;
+	    cout<<u2.metre;
+	    
+	   }
+	    if(secim==1)
+	    {
+	    	cout<<"metre değerini girin:"<<endl;
+	    cin>>metre;
+	    u2.cmetre=metre/100;
+	    cout<<"cmetre değeri="<<endl<<u2.cmetre;
+		}		
+}
+}
