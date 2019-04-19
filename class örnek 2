@@ -1,0 +1,38 @@
+#include "iostream"
+#include <cctype>
+#include <cstring>
+using namespace std;
+class personeller{
+	char personel_adi[20],personel_soyadi[28];
+	int yas;
+	public:
+		void arsiv(char* padi,char* psoyadi,int sayi)
+		{
+			strcpy(personel_adi,padi);
+			strcpy(personel_soyadi,psoyadi);
+			yas=sayi;
+			
+		}
+		void goruntule()
+		{
+			setlocale(LC_ALL,"Turkish");
+			cout<<"personel adi:"<<personel_adi<<endl
+			    <<"personel soyadı:"<<personel_soyadi<<endl
+			    <<"personel yasi:"<<yas<<"\n\n"<<endl;
+			    
+		}
+		
+}pers1,pers2,pers3;
+int main()
+{
+	setlocale(LC_ALL,"Turkish");
+	pers1.arsiv("Mustafa","gündoğdu",21);
+	pers2.arsiv("Mustafa","uysal",21);
+	pers3.arsiv("oguz","sak",22);
+	
+	pers1.goruntule();
+	pers2.goruntule();
+	pers3.goruntule();
+	
+	return 0;
+}
