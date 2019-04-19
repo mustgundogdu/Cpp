@@ -1,0 +1,96 @@
+#include<iostream>
+#include<string>
+#include<iomanip>
+using namespace std;
+
+class okul{
+	protected :
+		string isim[100][2];
+		int n;
+		unsigned long int no;
+		public :
+			
+			void sahis()
+			{
+				setlocale(LC_ALL,"Turkish");
+				cout<<"kaç kişi:"<<endl;
+				cin>>n;
+				
+				for(int i=0;i<n;i++)
+				{
+					cout<<"isim ve soyisim girin:"<<endl;
+			 		cin>>isim[i][0]>>isim[i][1];
+			 		
+					
+				}
+			
+				
+			}
+				void get_sahis()
+				{
+					for(int i=0;i<n;i++)
+					{
+						cout<<isim[i][0]<<setw(3)<<isim[i][1]<<endl;
+					}
+					
+				}
+};
+
+class ogrenci :private okul{
+	public :
+		
+		
+		void ogren()
+		{
+		
+			sahis();
+			
+		}
+		void sno()
+		{
+			for(int i=0;i<n;i++)
+			{
+				cout<<"ogrenci numaranızı girin:"<<endl;
+				cin>>no;
+				
+			}
+			for(int i=0;i<n;i++)
+			{
+				
+				cout<<isim[i][0]<<isim[i][1]<<setw(3)<<no<<endl;
+			}
+		}
+};
+class teach :public okul{
+	public :
+		void teacher()
+		{
+			sahis();
+			get_sahis();
+			
+		}
+};
+int main()
+{
+	int secim;
+	ogrenci o1;
+	teach t1;
+
+	
+	cout<<"secim yapın"<<endl;
+	
+	cout<<"ogrenci (1) ,ogretmen (2),devam(3)"<<endl;
+	cin>>secim;
+	switch(secim)
+	{
+		case 1:
+				o1.ogren();
+				o1.sno();
+				
+				case 2:
+				t1.teacher();
+				
+				
+	}
+	
+}
