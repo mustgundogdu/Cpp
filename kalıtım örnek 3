@@ -1,0 +1,117 @@
+#include<iostream>
+#include<string>
+#include<iomanip>
+using namespace std;
+
+class okul{
+	protected :
+		string ad,soyad;
+		char gen;
+		long int tel;
+		int yas;
+		public:
+			
+			void tanitim()
+			{
+				setlocale(LC_ALL,"Turkish");
+				cout<<"adınız ve soyadınız"<<endl;
+				cin>>ad>>soyad;
+				
+				cout<<"cinsiyetiniz:"<<endl;
+				cin>>gen;
+				
+				cout<<"telefon numaranız:"<<endl;
+				cin>>tel;
+				
+				cout<<"yasiniz:"<<endl;
+				cin>>yas;
+				
+			}
+			void get_tanit()
+			{
+			setlocale(LC_ALL,"Turkish");
+				cout<<"ad ve soyad:"<<ad<<setw(3)<<soyad<<"cinsiyet:"<<setw(3)<<gen<<"tel:"<<tel<<setw(3)<<"yas:"<<yas<<endl;
+			}
+			
+		
+};
+
+class mudur :public okul{
+	private:
+		unsigned int mn;
+		string bolum;
+		public :
+		void mt()
+		{
+			setlocale(LC_ALL,"Turkish");
+			tanitim();
+			cout<<"müdür numaranız:"<<endl;
+			cin>>mn;
+			
+			cout<<"Hangi bölüm ile ilgileniyorsunuz"<<endl;
+			cin>>bolum;
+		}
+		void get_mt()
+		{
+			setlocale(LC_ALL,"Turkish");
+			get_tanit();
+			cout<<"mudurun numarası ve bolumu"<<mn<<setw(5)<<bolum<<endl;
+		}
+		
+};
+
+class ogrenci : public okul{
+	private :
+		unsigned long int sn;
+		int sinif;
+		
+		public :
+			void ogrt()
+			{setlocale(LC_ALL,"Turkish");
+				tanitim();
+				
+				cout<<"ogrenci numaranızı girin :"<<endl;
+				cin>>sn;
+				
+				cout<<"kacıncı sınıfsınız:"<<endl;
+				cin>>sinif;
+				
+			}
+			void oget_t()
+			{setlocale(LC_ALL,"Turkish");
+				cout<<"ogrencinin bilgileri="<<endl;
+				get_tanit();
+				cout<<sn<<" "<<sinif<<endl;
+				
+				    
+			}
+	
+}; 
+
+
+
+
+
+
+
+int main()
+{
+	char secim;
+	mudur m1;
+	ogrenci o1;
+	
+	cout<<"secim yapin"<<endl;
+	cin>>secim;
+	if(secim=='m')
+	{
+	m1.mt();
+	m1.get_mt();	
+	}
+	else if (secim=='o')
+	{
+	o1.ogrt();
+	o1.oget_t();	
+	}
+	
+	
+}
