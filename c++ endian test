@@ -1,0 +1,18 @@
+#include<stdio.h>
+#include<stdint.h>
+#include<iostream>
+using namespace std;
+int main(void)
+{
+	int n=1;
+	if(*(char*)&n==1)
+	{
+		cout<<"system is little endian\n";
+		
+	}
+	else{
+		cout<<"system is big endian\n";
+		
+	}
+	return 0;
+}
