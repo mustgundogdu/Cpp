@@ -1,0 +1,149 @@
+#include<iostream>
+using namespace std;
+
+class otahta 
+{
+	private :
+		char kare[10]={'o','1','2','3','4','5','6','7','8','9'};
+		
+		public :
+			int oyuncu=1,i,secenek;
+			char mark;
+			
+			int oyun()
+			{
+				setlocale(LC_ALL,"Turkish");
+			do
+			{
+				
+			Tahta();
+			oyuncu=(oyuncu%2) ?1:2;
+			cout<<"Oyuncu "<<oyuncu<<",Bir sayı gir: "<<endl;
+			cin>>secenek;
+			
+			mark=(oyuncu==1)?'X':'O';
+			if(secenek==1 && kare[1]=='1')
+			  kare[1]=mark;
+			 
+			  else if(secenek==2 && kare[2]=='2')
+			  kare[2]=mark;
+			  
+			  else if(secenek==3 && kare[3]=='3')
+			  kare[3]=mark;
+			
+			  else if(secenek==4 && kare[4]=='4')
+			  kare[4]=mark;
+			
+			  else if(secenek==5 && kare[5]=='5')
+			  kare[5]=mark;
+			  
+			  else if(secenek==6 && kare[6]=='6')
+			  kare[6]=mark;
+			  
+			  else if(secenek==7 && kare[7]=='7')
+			  kare[7]=mark;
+			  
+			  else if(secenek==8 && kare[8]=='8')
+			  kare[8]=mark;
+			  
+			  else if(secenek==9 && kare[9]=='9')
+			  kare[9]=mark;
+			   else
+             {
+            cout<<"Geçersiz Hareket!!\a ";
+
+            oyuncu--;
+            cin.ignore();
+            cin.get();
+             }
+             i=kontrol();
+
+            oyuncu++;
+			}while(i==-1);
+			 Tahta();
+            if(i==1)
+
+             cout<<"==>\aOyuncu "<<--oyuncu<<" Kazandı Tebrikler...\a";
+             else
+            cout<<"==>\aOyun Berabere";
+
+               cin.ignore();
+               cin.get();
+    return 0;
+				
+			}
+			void Tahta()
+			{
+				setlocale(LC_ALL,"Turkish");
+				system("cls");
+				cout<<"\n\n\tSOS OYUNUNA HOŞGELDİNİZ\n\n"
+				    <<"Oyuncu1(X)  -  Oyuncu2(O)"<<endl<<endl;
+				    
+				    cout<<"     |     |     "<<endl;
+				    
+				    cout<<"  "<< kare[1] <<"  |  "<< kare[2] <<"  |  "<< kare[3] <<"  |  " <<endl;
+				    
+				    cout<<"_____|_____|_____"<<endl
+				        <<"     |     |     "<<endl;
+				        
+				    cout<<"  "<< kare[4] <<"  |  "<< kare[5] <<"  |  "<< kare[6] <<"  |  "<<endl;
+					
+					cout<<"_____|_____|_____"<<endl
+					    <<"     |     |     "<<endl;
+					
+					cout<<"  "<< kare[7] <<"  |  " << kare[8] <<"  |  "<< kare[9] <<"  |  "<<endl;
+					
+					cout<<"_____|_____|_____"<<endl
+					    <<"     |     |     "<<endl;
+					    
+					    
+						    
+			}
+			int kontrol()
+	  	   {
+	  	   	setlocale(LC_ALL,"Turkish");
+	  		  if(kare[1]==kare[2] && kare[2]==kare[3])
+	  		return 1;
+	  		
+			  else if(kare[4]==kare[5] && kare[5]==kare[6])
+	  		return 1;
+	  		
+			  else if(kare[7]==kare[8] && kare[8]==kare[9] )
+	  		return 1;
+	  		
+			  else if(kare[1]==kare[4] && kare[4]==kare[7])
+	  		return 1;
+	  		
+			  else if(kare[2]==kare[5] && kare[5]==kare[8])
+	  		return 1;
+	  		
+			  else if(kare[3]==kare[6] && kare[6]==kare[9])
+	  		return 1;
+	  		
+			  else if(kare[3]==kare[5] && kare[5]==kare[7])
+	  		return 1;
+	  		
+			  else if(kare[1]==kare[5] && kare[5]==kare[9])
+	  		return 1;
+	  		
+			  else if(kare[1]!='1' && kare[2]!='2' && kare[3]!='3' && kare[4]!='4' && kare[5]!='5' && kare[6]!='6' && kare[7]!='7' && kare[8]!='8' && kare[9]!='9')
+	  		return 0;
+	  		
+	  		else 
+	  		return -1;
+	  		
+	  		
+	  		
+		} 
+};
+
+
+
+int main()
+{
+	otahta t1;
+	t1.oyun();
+	
+	
+	return 0;
+}
